@@ -2,7 +2,7 @@ import os
 from block_markdown import markdown_to_html_node
 from extract_title import extract_title
 
-def generate_page(from_path, template_path, dest_path):
+def generate_page(from_path, template_path, dest_path, base_path):
   print(f"Generating page from from_path to dest_path using template_path")
 
   with open(from_path, "r") as archieve:
@@ -16,12 +16,14 @@ def generate_page(from_path, template_path, dest_path):
 
   template_content = template_content.replace("{{ Title }}", title)
   template_content = template_content.replace("{{ Content }}", html)
+  template_content = template_content.replace('href="/', f'href="{base_path}')
+  template_content = template_content.replace('src="/', f'src="{base_path}')
 
   os.makedirs(os.path.dirname(dest_path), exist_ok=True)
   with open(dest_path, "w") as f:
     f.write(template_content)
 
-def generate_pages_recursive(dir_path_content, template_path, dest_dir_path):
+def generate_pages_recursive(dir_path_content, template_path, dest_dir_path, base_path):
   files_in_dir = os.listdir(dir_path_content)
   for file in files_in_dir:
     file_dest_path = os.path.join(dest_dir_path, file)
@@ -29,7 +31,7 @@ def generate_pages_recursive(dir_path_content, template_path, dest_dir_path):
 
     if os.path.isfile(file_dir_path):
       file_dest_path = file_dest_path.replace(".md", ".html")
-      generate_page(file_dir_path, template_path, file_dest_path)
+      generate_page(file_dir_path, template_path, file_dest_path, base_path)
       continue
 
-    generate_pages_recursive(file_dir_path, template_path, file_dest_path)
+    generate_pages_recursive(file_dir_path, template_path, file_dest_path, base_path)
