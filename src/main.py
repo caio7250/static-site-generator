@@ -2,8 +2,8 @@ import os
 import shutil
 import sys
 
-from copystatic import copy_files_recursive
-from generate_page import generate_pages_recursive
+from ssg.site.assets import copy_files_recursive
+from ssg.site.pages import generate_pages_recursive
 
 dir_path_static = "./site/static"
 dir_path_public = "./docs"
@@ -28,5 +28,4 @@ def main():
 
 if __name__ == "__main__":
     main()
-
 

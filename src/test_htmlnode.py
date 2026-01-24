@@ -1,5 +1,5 @@
 import unittest
-from htmlnode import HTMLNode
+from ssg.nodes.html import HTMLNode
 
 class TestHTMLNode(unittest.TestCase):
     def test_to_html_props(self):

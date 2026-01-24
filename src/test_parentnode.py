@@ -1,7 +1,7 @@
 import unittest
 
-from parentnode import ParentNode
-from leafnode import LeafNode
+from ssg.nodes.parent import ParentNode
+from ssg.nodes.leaf import LeafNode
 
 class TestParentNode(unittest.TestCase):
   def test_to_html_with_children(self):

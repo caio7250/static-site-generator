@@ -1,5 +1,5 @@
 import unittest
-from block_markdown import (
+from ssg.markdown.block import (
     markdown_to_blocks,
     block_to_block_type,
     BlockType,

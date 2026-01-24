@@ -1,5 +1,5 @@
 import re
-from textnode import TextNode,TextType
+from ..nodes.text import TextNode, TextType
 
 def text_to_textnodes(text):
   node = [TextNode(text, TextType.TEXT)]
@@ -83,4 +83,3 @@ def extract_markdown_links(text):
     pattern = r"(?<!!)\[([^\[\]]*)\]\(([^\(\)]*)\)"
     matches = re.findall(pattern, text)
     return matches
-

@@ -1,6 +1,6 @@
 import os
-from block_markdown import markdown_to_html_node
-from extract_title import extract_title
+from ..markdown.block import markdown_to_html_node
+from ..markdown.title import extract_title
 
 
 def _root_path(dest_path, dest_root):
