@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Static Site Generator</title>
+    <title>{{ Title }}</title>
     <meta
       name="description"
       content="Caio Oliveira, backend engineer building resilient APIs, event-driven systems, and reliable platforms."
@@ -14,7 +14,7 @@
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;600;700&family=Source+Serif+4:opsz,wght@8..60,300;8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap"
       rel="stylesheet"
     />
-    <link href="./index.css" rel="stylesheet" />
+    <link href="{{ RootPath }}index.css" rel="stylesheet" />
   </head>
 
   <body>
@@ -26,16 +26,16 @@
           <p class="site-role">Backend Engineer</p>
         </div>
         <nav class="site-nav" aria-label="Primary">
-          <a href="./">Home</a>
-          <a href="./projects/">Guide</a>
-          <a href="./use-case/">Use Case</a>
-          <a href="./writing/">Reference</a>
-          <a href="./contact/">Contact</a>
+          <a href="{{ RootPath }}">Home</a>
+          <a href="{{ RootPath }}projects/">Guide</a>
+          <a href="{{ RootPath }}use-case/">Use Case</a>
+          <a href="{{ RootPath }}writing/">Reference</a>
+          <a href="{{ RootPath }}contact/">Contact</a>
         </nav>
       </header>
 
       <main class="site-main">
-        <article class="content"><div><h1>Static Site Generator</h1><p>A lightweight Python generator that turns markdown into a clean, consistent site with one template.</p><h2>Quick start</h2><ol><li>Add or edit markdown in <code>site/content/</code></li><li>Run <code>python3 src/main.py</code></li><li>Serve the output from <code>docs/</code></li></ol><h2>Project structure</h2><ul><li><code>site/content/</code> markdown pages</li><li><code>site/templates/base.html</code> layout</li><li><code>site/static/index.css</code> styling</li><li><code>docs/</code> generated output</li></ul><h2>Customize</h2><ul><li>Update the HTML layout in <code>site/templates/base.html</code></li><li>Adjust styles in <code>site/static/index.css</code></li><li>Add new pages by creating folders in <code>site/content/</code></li></ul><p>Want to see it in action? <a href="./use-case/">Read the use case</a>.</p></div></article>
+        <article class="content">{{ Content }}</article>
       </main>
 
       <footer class="site-footer">

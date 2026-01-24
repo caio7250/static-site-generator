@@ -5,13 +5,13 @@ import sys
 from copystatic import copy_files_recursive
 from generate_page import generate_pages_recursive
 
-dir_path_static = "./static"
+dir_path_static = "./site/static"
 dir_path_public = "./docs"
-dir_path_content = "./content"
-template_path = "./template.html"
+dir_path_content = "./site/content"
+template_path = "./site/templates/base.html"
 
 def main():
-    if len(sys.argv) > 0:
+    if len(sys.argv) > 1:
         base_path = sys.argv[1]
     else:
         base_path = "/"
@@ -28,6 +28,5 @@ def main():
 
 if __name__ == "__main__":
     main()
-
 
 
