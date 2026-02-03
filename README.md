@@ -1,6 +1,6 @@
 # Static Site Generator
 
-This repository contains a lightweight Python static site generator with a documentation-style template focused on practical usage.
+A lightweight Python static site generator with a documentation-style template focused on practical usage.
 
 ## Project structure
 
